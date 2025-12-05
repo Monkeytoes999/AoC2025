@@ -81,7 +81,6 @@ while len(nLRs) != len(lRs):
         lRs = nLRs.copy()
         uRs = nURs.copy()
     nLRs, nURs = mergeRanges(lRs, uRs)
-    print("MERGED!!!")
                 
 for i in range(len(lRs)):
     possibleFresh += uRs[i] - lRs[i] + 1
