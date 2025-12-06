@@ -23,8 +23,6 @@ with open('inputs/6input.txt', 'r') as file:
     for j in range(len(ops)):
         if ops[j] == "+":
             vals[j] = 0
-        else:
-            vals[j] = 1
     
     #Part 1
     # for i in range(len(mp) - 1):
