@@ -13,8 +13,9 @@ with open('inputs/7input.txt', 'r') as file:
     for line in file:
         ln = line.strip()
         mp.append(list(ln)) 
-     
 dupMap = copy.deepcopy(mp)
+
+#Part 1
 for i in range(len(mp)):
     for j in range(len(mp[0])):
         if mp[i][j] == "S":
@@ -29,6 +30,7 @@ for i in range(len(mp)):
             else:
                 mp[i+1][j] = "|"
                     
+#Part 2
 # I tried recursion, and like yeah, it works, but it's NOT a good method for the # of 'worlds' the program goes through (390684413472684) and probably eats a LOT of memory.
 # I also recognize now that this is a BAD recursive approach. I have implemented a much better recursive solution below.
 # def recursiveSplit(map):
