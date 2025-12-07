@@ -30,6 +30,7 @@ for i in range(len(mp)):
                 mp[i+1][j] = "|"
                     
 # I tried recursion, and like yeah, it works, but it's NOT a good method for the # of 'worlds' the program goes through (390684413472684) and probably eats a LOT of memory.
+# I also recognize now that this is a BAD recursive approach. I have implemented a much better recursive solution below.
 # def recursiveSplit(map):
 #     global worlds
 #     for i in range(len(map)):
@@ -54,6 +55,31 @@ for i in range(len(mp)):
 #             elif (map[i][j] == "|" and i == (len(map) - 1)):
 #                 worlds += 1
 # recursiveSplit(dupMap)
+
+# And this recursion WORKS. You just don't be an idiot and you can make a good recursive function. I have a tendancy to overcomplicate my solutions.
+# visited = {}
+# def calculatePath(x, y):
+#     if (y == len(dupMap) - 1):
+#         return 1
+#     elif ((x, y) in visited):
+#         return visited[(x, y)]
+#     elif (dupMap[y][x] == "^"):
+#         out = 0
+#         out += calculatePath(x - 1, y + 1)
+#         out += calculatePath(x + 1, y + 1)
+#         visited[(x, y)] = out
+#         return out
+#     else:
+#         out = calculatePath(x, y + 1)
+#         visited[(x, y)] = out
+#         return out
+
+# for y in range(len(dupMap)):
+#     for x in range(len(dupMap[0])):
+#         if dupMap[y][x] == "S":
+#             worlds = calculatePath(x, y)
+#             print(f"Worlds: {worlds}")
+#             break
     
 for i in range(len(dupMap[0])):
     dupMap[len(dupMap) - 1][i] = 1
