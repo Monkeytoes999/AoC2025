@@ -24,6 +24,7 @@ for i in range(len(mp)):
         area = (abs(x2 - x1) + 1) * (abs(y2 - y1) + 1)
         maxArea = max(maxArea, area)
         
+        #Part 2
         internal = True
         if area > maxInternalArea:
             poly2 = Polygon([(x1, y1), (x1, y2), (x2, y2), (x2, y1)])
@@ -31,5 +32,5 @@ for i in range(len(mp)):
                 maxInternalArea = max(maxInternalArea, area) 
     
     # Logging
-print(f"{maxArea}")
-print(f"{maxInternalArea}")
+print(f"Biggest possible rectangle area: {maxArea}")
+print(f"Biggest internal rectangle area: {maxInternalArea}")
